@@ -9,7 +9,7 @@ tz = pytz.timezone('America/New_York')
 emails = ['892714129@qq.com']
 content = ''
 OWM_API_KEY = '508a300e8b1ea7c704b80a574472ae9f'
-GOOGLE_MAP_KEY = 'AIzaSyA7lDyyF5WebJYGR241iCDxl4f7mvZOy4c&q'
+GOOGLE_MAP_KEY = 'AIzaSyBxVDWCgsSKoXmoqFZg1kOjXlRzXUwt51g'
 
 
 def send_email(subject='Weather alert enroll successful<noreply@ranxiaolang.com>', email='892714129@qq.com', content='Weather alert enroll successful'):
@@ -22,7 +22,7 @@ def weather(request):
             ct = request.POST['c'].title()
             now =('http://api.openweathermap.org/data/2.5/weather?q={}&appid=' + OWM_API_KEY + '&units=Imperial').format(ct)
             c =('http://api.openweathermap.org/data/2.5/forecast?q={}&appid=' + OWM_API_KEY + '&units=Imperial').format(ct)
-            cmap = ("https://www.google.com/maps/embed/v1/place?key=" + GOOGLE_MAP_KEY + "={}").format(ct)
+            cmap = ("https://www.google.com/maps/embed/v1/place?key=" + GOOGLE_MAP_KEY + "&q={}").format(ct)
             now_w = requests.get(now)
             w = requests.get(c)
             now_api = now_w.json()

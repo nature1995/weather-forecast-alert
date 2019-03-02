@@ -27,6 +27,7 @@ import Weather.views
 urlpatterns = [
     path(r'admin/', admin.site.urls),
     path(r'', weather, name='main'),
+    path(r'profile/', home, name='profile'),
     path(r'accounts/', include('allauth.urls')),
     path(r'accounts/', include('myauth.urls')),
     url(r'^favicon.ico$', RedirectView.as_view(url=r'media/favicon.ico')),
