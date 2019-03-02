@@ -3,7 +3,8 @@
 <div align="center">
     <a href=""><img src="https://i.loli.net/2019/03/02/5c79e69702a5f.png" width="200" hegiht="200"/></a>
 </div>
-<br>
+
+[![Build Status](https://travis-ci.com/nature1995/weather-forecast-alert.svg?token=ihxd9jwdJ367UvYy3j9G&branch=master)](https://travis-ci.com/nature1995/weather-forecast-alert)
 
 ## Introduction  
 This Django web app can provide weather forecasts with chart display and notifications.
