@@ -57,6 +57,12 @@ http://0.0.0.0:8000
 <img src="https://i.loli.net/2019/03/03/5c7ab32e84970.png" width="250" height="450" alt="Result05.png" title="Result05.png" />
 </div>
 
+3。 Show figure with Smoothed Line Chart or Histogram
+<div>
+<img src="https://i.loli.net/2019/03/03/5c7abb9c5b893.png" height="250" alt="Result06.png" title="Result06.png" />
+<img src="https://i.loli.net/2019/03/03/5c7abb9c903c2.png" height="250" alt="Result07.png" title="Result07.png" />
+</div>
+
 #### Notice:
 OpenWeatherMap API key:  
 OWM_API_KEY: `/weather-forecast-alert/apps/weather/views.py`
