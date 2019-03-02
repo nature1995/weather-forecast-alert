@@ -38,11 +38,11 @@ AUTHENTICATION_BACKENDS = (
 )
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.qq.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = '892714129@qq.com'
-EMAIL_HOST_PASSWORD = 'vxbiockkdkkybdbe'
-EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.exmail.qq.com'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'weather@ranxiaolang.com'
+EMAIL_HOST_PASSWORD = 'SgWyJ4yWfpBfjUBd'
+EMAIL_USE_SSL = True
 
 INSTALLED_APPS = [
     'django.contrib.admin',
