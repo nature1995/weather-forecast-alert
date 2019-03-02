@@ -15,21 +15,22 @@
     <section class="jumbotron text-center" style=" background-image:url({% static "images/bg2.jpg"%}); background-size:cover;">
       <div class="container" style="height:100%; width:100%;" >
           <h1 class="jumbotron-heading">Weather</h1>
-        <p class="lead" style="color: #ffffff"><b>Current weather and forecasts in your city</b></p>
+        <p class="lead" style="color: #ffffff"><b>Weather forecasts with chart and notifications</b></p>
       </div>
     </section>
     <div class="container-fluid">
         <div class="row text-center">
           <div class="col-md-3"></div>
           <div class="col-md-6">
-              <h5 style="color: #000000">Your City name (e.g. Hoboken)</h5>
+              <h5 style="color: #000000">Weather forecast (e.g. Hoboken)</h5>
               <form method="post" class='form-inline'>
                 {% csrf_token %}
                 <div class="col-md-4"></div>
                 <input type="text"  name="c" class='form-control' placeholder="Enter City ...">
                 <input type="submit" value="Search" class='btn btn-info'>
               </form><br>
-              <h5 style="color: #000000">Your Email (e.g. zgong5@stevens.edu)</h5>
+              <h5 style="color: #000000">Notifications (e.g. zgong5@stevens.edu)</h5>
+              <h6 style="color: #000000">Notify when temperature below 45&deg F</h6>
               <form method="get" class='form-inline'>
                 {% csrf_token %}
                 <div class="col-md-4"></div>
@@ -41,17 +42,17 @@
             {% endif%}
           {% if not cur %}
               <h5 style="color: #e8651e">Current Weather(Example)</h5>
-              <span align=left> <img src="http://www.openweathermap.org/img/w/10n.png" alt=""> </span>
-              <strong> <h3 style='display:inline'>New York</h3> </strong>
-              <h4 style="color: #38a3d4">2019-03-01 19:23:08</h4>
-              <span>33.7 &deg F | </span>
-              <span><strong>light rain</strong></span>
-              <h5>Clouds: 92 %</h5>
+              <span align=left> <img src="http://www.openweathermap.org/img/w/50n.png" alt=""> </span>
+              <strong> <h3 style='display:inline'>Hoboken</h3></strong>
+              <h4 style="color: #38a3d4">2019-03-01 21:46:26</h4>
+              <span>43.23 &deg F | </span>
+              <span><strong>mist</strong></span>
+              <h5>Clouds: 68 %</h5>
           {% endif %}
           {% for i in cur %}
               <h3 style="color: #e8651e">Current Weather</h3>
-              <span align=left> <img src="{{i.i}}" alt=""> </span>
-              <strong> <h3 style='display:inline'>{{i.name}}</h3> </strong>
+              <span align=left> <img src="{{i.i}}" alt=""></span>
+              <strong> <h3 style='display:inline'>{{i.name}}</h3></strong>
               <h4 style="color:{{color}}">{{i.dt}}</h4>
               <span>{{i.ab}} &deg F | </span>
               <span><strong>{{i.ds}}</strong></span>

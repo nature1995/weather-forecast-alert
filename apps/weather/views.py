@@ -52,7 +52,7 @@ def weather(request):
 
             content_text = 'Weather alert, lower than 45 °F, current weather is ' + str(cur_weather['ab']) + ' °F'
             if cur_weather['ab'] <= 45.0:
-                send_email(subject="Weather alert<noreply@anxiaolang.com>",email= emails[-1],content=content_text)
+                send_email(subject="Weather alert<noreply@ranxiaolang.com>",email= emails[-1],content=content_text)
             col = '#A'+repr(c1)+'f'+repr(c2)
             print('List', list)
             # return render(request,'weather.html',{'a':list,'cur':cur_list, 'color':col,'map':cmap})
@@ -63,7 +63,7 @@ def weather(request):
         try:
             em = request.GET['em']
             emails.append(em)
-            send_email(subject='Weather alert enroll successful<noreply@anxiaolang.com>', email=emails[-1], content='Weather alert enroll successful')
+            send_email(subject='Weather alert enroll successful<noreply@ranxiaolang.com>', email=emails[-1], content='Weather alert enroll successful')
             print(em)
             return render(request, 'weather.html')
         except KeyError:
