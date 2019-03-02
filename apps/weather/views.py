@@ -8,6 +8,8 @@ from django.core.mail import send_mail
 tz = pytz.timezone('America/New_York')
 emails = ['892714129@qq.com']
 content = ''
+OWM_API_KEY = '508a300e8b1ea7c704b80a574472ae9f'
+GOOGLE_MAP_KEY = 'AIzaSyA7lDyyF5WebJYGR241iCDxl4f7mvZOy4c&q'
 
 
 def send_email(subject='Weather alert enroll successful<noreply@ranxiaolang.com>', email='892714129@qq.com', content='Weather alert enroll successful'):
@@ -18,9 +20,9 @@ def weather(request):
     if request.method == 'POST':
         try:
             ct = request.POST['c'].title()
-            now =('http://api.openweathermap.org/data/2.5/weather?q={}&appid=508a300e8b1ea7c704b80a574472ae9f&units=Imperial').format(ct)
-            c =('http://api.openweathermap.org/data/2.5/forecast?q={}&appid=508a300e8b1ea7c704b80a574472ae9f&units=Imperial').format(ct)
-            cmap = "https://www.google.com/maps/embed/v1/place?key=AIzaSyA7lDyyF5WebJYGR241iCDxl4f7mvZOy4c&q={}".format(ct)
+            now =('http://api.openweathermap.org/data/2.5/weather?q={}&appid=' + OWM_API_KEY + '&units=Imperial').format(ct)
+            c =('http://api.openweathermap.org/data/2.5/forecast?q={}&appid=' + OWM_API_KEY + '&units=Imperial').format(ct)
+            cmap = ("https://www.google.com/maps/embed/v1/place?key=" + GOOGLE_MAP_KEY + "={}").format(ct)
             now_w = requests.get(now)
             w = requests.get(c)
             now_api = now_w.json()
@@ -35,7 +37,7 @@ def weather(request):
             cur_weather['i'] = "http://www.openweathermap.org/img/w/" + now_api['weather'][0]['icon'] + ".png"
             cur_weather['cl'] = now_api['clouds']['all']
             cur_list.append(cur_weather)
-            print('Now', now_api)
+            print('Now: ', now_api)
             print(cur_list)
 
             for i in range(len(api['list'])):
@@ -54,7 +56,7 @@ def weather(request):
             if cur_weather['ab'] <= 45.0:
                 send_email(subject="Weather alert<noreply@ranxiaolang.com>",email= emails[-1],content=content_text)
             col = '#A'+repr(c1)+'f'+repr(c2)
-            print('List', list)
+            print('Forecast: ', list)
             # return render(request,'weather.html',{'a':list,'cur':cur_list, 'color':col,'map':cmap})
             return render(request, 'weather.html', {'a_list': list, 'cur': cur_list, 'color': col, 'map': cmap})
         except KeyError:
@@ -64,7 +66,7 @@ def weather(request):
             em = request.GET['em']
             emails.append(em)
             send_email(subject='Weather alert enroll successful<noreply@ranxiaolang.com>', email=emails[-1], content='Weather alert enroll successful')
-            print(em)
+            print('Alert email: ',em)
             return render(request, 'weather.html')
         except KeyError:
             return render(request, 'weather.html')

@@ -6,68 +6,42 @@
 <br>
 
 ## Introduction  
-Nowadays, the society has become more and more extensive in international culture, and English has become a bridge for communication between people all over the world. But even if it is a language, people who are not native speakers of English may have different understandings of the language. The result is a bias in emotional understanding. 
-
-If our program can record conversations in real time, we can analyze the emotions of the language and assist in speaking to judge whether our emotions are correct. In this way, the most accurate emotions and meanings are expressed.
-
-## Purposals  
-This is a lightweight web service access program that allows you to directly translate text into words and record them. Emotional analysis can be performed while recording.
-
-## Architecture。
-
-<div align="center">
-<img src="https://i.loli.net/2019/02/17/5c697080ba3cd.png" width="400" hegiht="800"/>
-</div>
+This Django web app can provide weather forecasts with chart display and notifications.
 
 ## Features  
-- [x] Create Flask web server
-- [X] Build fontend and backend
-- [x] Add feature: Real time speech to text
-- [x] Add feature: Identify sentiment
-- [x] Add feature: Record speech text
-- [x] Make real time speech, text, sentiment identification. 
-- [x] Run Angry-Ducks on the Google Cloud Server
+- [x] Choose the city to get weather
+- [X] Display current weather condition
+- [x] Display Forecast as a chart(5 day / 3 hour forecast)
+- [x] Set email notifications to notify the user if the temperature is below 45 °F
 
 ## Demo
-<div align="center">
-<img src="https://i.loli.net/2019/02/19/5c6afef001185.png" height="500"/>
- <img src="https://i.loli.net/2019/02/19/5c6aff8ace255.png" height="500"/>
-</div>
+```
+http://47.93.251.173/  
+```
+If you find the online demo do not work, please follow the next part to run the code local.
 
-## Run the code:  
+## Run the code local:  
 1. Clone this repository:
 ```
-git clone git@github.com:nature1995/angry-duckhacks.git
+git clone https://github.com/nature1995/weather-forecast-alert.git
 ```
-2. Go into angry-duckhacks folder and set up virtual environment (https://pypi.org/project/virtualenv):
+2. Enter into `weather-forecast-alert`  folder, set up virtual environment with **python 3.6** and install packages.
 ```
- cd angry-duckhacks
- virtualenv env
- source env/bin/active
+ cd weather-forecast-aler
+ pip3 install -r requirements.txt
 ```
-3. Install requirement:
+3. Run server on your own computer:
 ```
- pip install -r requirement.txt
+python manage.py runserver 0.0.0.0:8000
 ```
-4. Set up Google Cloud Platform:  
-    - Go to https://console.cloud.google.com  
-    - Click "Select a project" 
-    - Set up a new project.
-    - Go to APIs & Services and choose “+ENABLE APIS AND SERVICES”.
-    - Enable “Cloud Natural Language API” and “Cloud Speech-to-Text API”.
-    - Click “Credentials” => “Create credentials” => “Service account key” =>get your own json key.
-5. Put your json key under angry-duckhacks root
+4. Access though browser
 ```
-/angry-duckhacks/<your project ID>.json
+http://127.0.0.1:8000
+http://0.0.0.0:8000
 ```
-6. Change setting.py
-```
-GOOGLE_API = 'google-api.json' #Your GOOGLE_API
-```
-7. Run server on your own computer:
-```
-python main.py 0.0.0.0:5000
-```
+**Notice:**
+OWM_API_KEY: `/weather-forecast-alert/apps/weather/views.py`
+GOOGLE_MAP_KEY: `/weather-forecast-alert/apps/weather/views.py`
 
 ## Author  
 [nature1995](https://github.com/nature1995) | Ziran Gong
