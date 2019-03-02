@@ -15,9 +15,9 @@ This Django web app can provide weather forecasts with chart display and notific
 - [x] Set email notifications to notify the user if the temperature is below 45 °F
 
 ## Demo
-```
+
 http://47.93.251.173/  
-```
+
 If you find the online demo do not work, please follow the next part to run the code local.
 
 ## Run the code local:  
