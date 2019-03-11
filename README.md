@@ -29,7 +29,7 @@ git clone https://github.com/nature1995/weather-forecast-alert.git
 ```
 2. Enter into `weather-forecast-alert`  folder, set up virtual environment with **python 3.6** and install packages.
 ```
- cd weather-forecast-aler
+ cd weather-forecast-alert
  pip3 install -r requirements.txt
 ```
 3. Run server on your own computer:
@@ -65,10 +65,13 @@ http://0.0.0.0:8000
 
 #### Notice:
 OpenWeatherMap API key:  
-OWM_API_KEY: `/weather-forecast-alert/apps/weather/views.py`
+OWM_API_KEY: `./weather-forecast-alert/apps/weather/views.py`
 
 Google Map API key:   
-GOOGLE_MAP_KEY: `/weather-forecast-alert/apps/weather/views.py`
+GOOGLE_MAP_KEY: `./weather-forecast-alert/apps/weather/views.py`  
+
+Email key:  
+EMAIL_HOST_PASSWORD: `./weather-forecast-alert/Weather/settings.py`
 
 ## Author  
 [nature1995](https://github.com/nature1995) | Ziran Gong
