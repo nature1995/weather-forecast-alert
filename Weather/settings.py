@@ -41,7 +41,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.exmail.qq.com'
 EMAIL_PORT = 465
 EMAIL_HOST_USER = 'weather@ranxiaolang.com'
-EMAIL_HOST_PASSWORD = 'SgWyJ4yWfpBfjUBd'
+EMAIL_HOST_PASSWORD = 'Cuzw3QVEK6D6UCof'
 EMAIL_USE_SSL = True
 
 INSTALLED_APPS = [
