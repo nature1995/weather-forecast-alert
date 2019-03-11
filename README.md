@@ -32,11 +32,19 @@ git clone https://github.com/nature1995/weather-forecast-alert.git
  cd weather-forecast-alert
  pip3 install -r requirements.txt
 ```
-3. Run server on your own computer:
+3. Update API key
+
+OpenWeatherMap API key:    
+OWM_API_KEY: `./weather-forecast-alert/apps/weather/views.py` 
+
+Email key: (See email to find the latest key)  
+EMAIL_HOST_PASSWORD: `./weather-forecast-alert/Weather/settings.py`
+
+4. Run server on your own computer:
 ```
 python manage.py runserver 0.0.0.0:8000
 ```
-4. Access though browser
+5. Access though browser
 ```
 http://127.0.0.1:8000
 or
@@ -70,7 +78,7 @@ OWM_API_KEY: `./weather-forecast-alert/apps/weather/views.py`
 Google Map API key:   
 GOOGLE_MAP_KEY: `./weather-forecast-alert/apps/weather/views.py`  
 
-Email key:  
+Email key: (See email to find the latest key) 
 EMAIL_HOST_PASSWORD: `./weather-forecast-alert/Weather/settings.py`
 
 ## Author  
