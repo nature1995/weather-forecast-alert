@@ -78,8 +78,16 @@ OWM_API_KEY: `./weather-forecast-alert/apps/weather/views.py`
 Google Map API key:   
 GOOGLE_MAP_KEY: `./weather-forecast-alert/apps/weather/views.py`  
 
-Email key: (See email to find the latest key) 
-EMAIL_HOST_PASSWORD: `./weather-forecast-alert/Weather/settings.py`
+Set your Email:   
+Location: `./weather-forecast-alert/Weather/setting.py`  
+```
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.exmail.qq.com'
+EMAIL_PORT = 465  # Your send port
+EMAIL_HOST_USER = 'weather@ranxiaolang.com'
+EMAIL_HOST_PASSWORD = 'Your Password'  # Use the dedicate password not your email password
+EMAIL_USE_SSL = True  # SSL or TSL depend on email provider
+```
 
 ## Author  
 [nature1995](https://github.com/nature1995) | Ziran Gong
