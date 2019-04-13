@@ -37,12 +37,14 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',
 )
 
+# Email Setup
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.exmail.qq.com'
-EMAIL_PORT = 465
+EMAIL_PORT = 465  # Your send port
 EMAIL_HOST_USER = 'weather@ranxiaolang.com'
-EMAIL_HOST_PASSWORD = 'Cuzw3QVEK6D6UCof'
-EMAIL_USE_SSL = True
+EMAIL_HOST_PASSWORD = 'Your Password'  # Use the dedicate password not your email password
+EMAIL_USE_SSL = True  # SSL or TSL depend on email provider
+# EMAIL_USE_TSL = True  # SSL or TSL depend on email provider
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -134,7 +136,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/New_York'
 
 USE_I18N = True
 

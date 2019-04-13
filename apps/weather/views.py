@@ -8,13 +8,15 @@ from django.core.mail import send_mail
 tz = pytz.timezone('America/New_York')
 emails = ['892714129@qq.com']
 content = ''
-OWM_API_KEY = '508a300e8b1ea7c704b80a574472ae9f'
-GOOGLE_MAP_KEY = 'AIzaSyBxVDWCgsSKoXmoqFZg1kOjXlRzXUwt51g'
+OWM_API_KEY = '508a300e8b1ea7c704b80a574472ae9f'  # Your OWM_API_KEY
+GOOGLE_MAP_KEY = 'Your GOOGLE_MAP_KEY'  # Your GOOGLE_MAP_KEY
 
 
 def send_email(subject='Weather alert enroll successful<noreply@ranxiaolang.com>', email='892714129@qq.com', content='Weather alert enroll successful'):
-    send_mail(subject, content, 'weather@ranxiaolang.com', [email], html_message=False)
-
+    try:
+        send_mail(subject, content, 'weather@ranxiaolang.com', [email], html_message=False)
+    except:
+        pass
 
 def weather(request):
     if request.method == 'POST':
