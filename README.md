@@ -18,7 +18,7 @@ This Django web app can provide weather forecasts with chart display and notific
 
 ## Demo
 
-http://47.93.251.173/  
+https://www.ranxiaolang.com/weather
 
 If you find the online demo do not work, please follow the next part to run the code local.
 
